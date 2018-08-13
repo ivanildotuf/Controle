@@ -9,4 +9,8 @@ PhpMyAdmin{
 Login:root
 Senha:root	
 }
+Usuario do site{
+Login:adm
+Senha:adm		
+}
 

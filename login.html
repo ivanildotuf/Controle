@@ -22,7 +22,7 @@
                 <a href="php/cadastroDepartamento.php">Cadastro de Departamento</a>
                 <a href="php/cadastroMovimentacao.php">Cadastro de Movimentacao</a>
                 <a href="php/relatorioMovimentacao.php">Relat&oacute;rio de Movimenta&ccedil;&atilde;o</a>
-                <a href="login.html">Login</a>
+                <a href="login.html">Login</a>        
             </ul>
           </div>
       </div>
@@ -35,8 +35,13 @@
     <div class="block" id="block-text">
       <div class="secondary-navigation">
           <div style="font-size: 20px;">
-            Um simples controle.<br>
-            <input type="button" onclick="window.location='index.html'" value="Voltar">
+            usuario:
+            <br><input type="text" id="usuario"><br>
+            senha:
+            <br><input type="password" id="senha">
+            <br>
+            <input type="button" value="Entrar" id="login">            
+            <input type="button" value="Sair" id="logout">            
           </div>
       </div>
     </div>
@@ -46,6 +51,22 @@
 </body>
 </html>
 
+<script>
+  $("#login").click(function(){
+  var usuario,senha;
+  usuario = document.getElementById("usuario");
+  senha = document.getElementById("senha");
+  $.ajax({url: "php/login.php?usuario="+usuario.value+"&senha="+senha.value+"&opcao=login" ,success: function(result){
+          alert(result);
+      }});  
+    });
+  
+  $("#logout").click(function(){
+  $.ajax({url: "php/login.php?opcao=logout" ,success: function(result){
+          alert(result);
+      }});  
+    });
+  </script>>
 
 
 

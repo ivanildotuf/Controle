@@ -1,3 +1,11 @@
+<?php
+session_start();
+if($_SESSION['usuario']!="adm" && $_SESSION['senha']!="adm"){
+  unset($_SESSION['usuario']);
+  unset($_SESSION['senha']);
+  header('location:../index.html');
+}
+?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -22,7 +30,7 @@
               <a href="cadastroDepartamento.php">Cadastro de Departamento</a>
               <a href="cadastroMovimentacao.php">Cadastro de Movimentacao</a>
               <a href="relatorioMovimentacao.php">Relat&oacute;rio de Movimenta&ccedil;&atilde;o</a>
-              <a href="../sobre.html">Sobre</a>        
+              <a href="../login.html">Login</a>        
             </ul>
           </div>
       </div>
